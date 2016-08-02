@@ -1,5 +1,7 @@
 package com.cn;
 
+import org.w3c.dom.Node;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.PrintStream;
@@ -41,6 +43,26 @@ public class DomXmlParser {
         reader.close();
 
         return sb.toString();
+    }
+
+    /**
+     *
+     * @param typeI org.w3c.dom.Node enum values
+     * @return String representing typeI
+     */
+    public String getNodeTypeString(short typeI) {
+        switch (typeI) {
+            case Node.ELEMENT_NODE:
+                return "ELEMENT_NODE";
+            case Node.ATTRIBUTE_NODE:
+                return "ATTRIBUTE_NODE";
+            //
+            // ...
+            //
+            default:
+                return "UNKNOWN_NODE";
+        }
+
     }
 
 
